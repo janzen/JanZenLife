@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import com.janzen.janzenlife.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import utils.JumpUtils;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +38,8 @@ public class MainActivity extends BaseActivity
     NavigationView navView;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
+    @BindView(R.id.button_play)
+    Button buttonPlay;
 
 
     @Override
@@ -66,6 +71,15 @@ public class MainActivity extends BaseActivity
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    @OnClick({R.id.button_play})
+    public void OnClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_play:
+                JumpUtils.goToVideoPlayer(this, buttonPlay);
+                break;
         }
     }
 

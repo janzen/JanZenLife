@@ -6,4 +6,6 @@
 
     <color name="main_green_color">#228B22</color>
     <color name="greyish_brown">#525252</color>
+    <color name="style_color">#005fff</color><!--主题色-->
+
 </resources>
